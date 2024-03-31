@@ -42,8 +42,9 @@ function getInfoAboutUser(user) {
 
 fetchFn(userUrl, getInfoAboutUser);
 
-/*6 Каждому посту додати кнопку/посилання, при кліку на яку відбувається перехід на сторінку post-details.html, котра
-має детальну інфу про поточний пост.*/
+/*6 Каждому посту додати кнопку/посилання, при кліку на яку відбувається перехід на сторінку post-details.html,
+ котра має детальну інфу про поточний пост.
+*/
 //логіка відповідно до завдання:
 let userPosts = document.createElement('div');
 document.getElementsByClassName('getPosts')[0].onclick = function () {

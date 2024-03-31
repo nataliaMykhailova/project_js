@@ -16,6 +16,7 @@ body {
 }
 
 .user {
+    box-shadow: 0 1px 11px 0 rgba(0,0,0,0.75);
     flex-direction: column;
     background-color: white;
     width: 45vw;
@@ -34,12 +35,12 @@ body {
     font-weight: 400;
 }
 .user>button:hover {
-    border: 1px solid grey;
+    border: 1px solid black;
     color: black;
 }
 .user:hover{
     color: black;
-    border: 1px solid grey;
+    border: 2px solid black;
 }
 .containerUserDet{
     display: flex;
@@ -48,6 +49,7 @@ body {
     align-items: center;
 }
 .li{
+    box-shadow: 0 1px 11px -3px rgba(0,0,0,0.75);
     color: black;
     padding-left: 20px;
     background-color: white;
@@ -94,12 +96,13 @@ body {
     border-radius: 15px;
     padding: 10px 0;
     border: 1px solid grey;
+    box-shadow: 0 1px 11px -3px rgba(0,0,0,0.75);
 }
 .userPosts>div>p{
     font-size: 1.3vw;
     font-weight: bold;
     max-width: 90%;
-    color: black;
+    color: #2c4762;
     text-align: center;
     margin: 0;
 }
@@ -139,5 +142,24 @@ body {
 }
 .comments li{
     font-size: 1.3vw;
+}
+
+.returnButton{
+    position: fixed;
+    top: 30%;
+    right: 0;
+    width: 200px;
+    height: 120px;
+    font-family: "Patrick Hand SC", cursive;
+    font-weight: 400;
+    font-size: 40px;
+    border-radius: 20px;
+    box-shadow: 0 1px 11px 0 rgba(0,0,0,0.75);
+    background-color: white;
+}
+.returnButton:hover{
+    font-weight: bold;
+    width: 250px;
+    height: 150px;
 }
 
