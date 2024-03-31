@@ -1,17 +1,18 @@
-/*а странице post-details.html:
-7 Вивести всю, без виключення, інформацію про об'єкт post на який клікнули .
-8 Нижчє інформаці про пост, вивести всі коментарі поточного поста (ендпоінт  - https://jsonplaceholder.typicode.com/posts/POST_ID/comments)
-post-details.html - блок з інфою про пост зверху. Коментарі - по 4 в ряд.
-Всі елементи котрі характеризують users, posts, comments візуалізувати, так, щоб було видно що це блоки (дати фон. марджини і тд)*/
+//відхопила інформацію та створила url
 let postId = new URL(location.href).searchParams.get('postId');
-console.log(postId);
 let postUrl = `https://jsonplaceholder.typicode.com/posts/`+postId;
 let commentsUrl = `https://jsonplaceholder.typicode.com/posts/${postId}/comments`;
+
+//знову функція з fetch))
 function fetchFn(url, callback) {
     fetch(url)
         .then(response => response.json())
         .then(elements => callback(elements));
 }
+
+/*а странице post-details.html:
+7 Вивести всю, без виключення, інформацію про об'єкт post на який клікнули .*/
+//логіка відповідно до завдання
 function getInfoAboutPost (post){
     let postDetails = document.getElementsByClassName('postDetails')[0];
     postDetails.classList.add('flexSpaceEv');
@@ -24,6 +25,10 @@ function getInfoAboutPost (post){
         postDetails.appendChild(postUl);
     }
 }
+
+/*8 Нижчє інформаці про пост, вивести всі коментарі поточного поста (ендпоінт  - https://jsonplaceholder.typicode.com/posts/POST_ID/comments)
+post-details.html - блок з інфою про пост зверху. Коментарі - по 4 в ряд.*/
+//логіка відповідно до завдання:
 function getComments (comments){
 let commentsDiv = document.getElementsByClassName('comments')[0];
 commentsDiv.classList.add('flexSpaceEv');
@@ -43,5 +48,6 @@ commentsDiv.appendChild(h1);
             commentsDiv.appendChild(commentDiv);
         }
 }
+
 fetchFn(postUrl, getInfoAboutPost);
 fetchFn(commentsUrl, getComments);

@@ -1,23 +1,24 @@
-/*На странице user-details.html:
-4 Вивести всю, без виключення, інформацію про об'єкт user на який клікнули
-5 Додати кнопку "post of current user", при кліку на яку, з'являються title всіх постів поточного юзера
-(для получения постов используйте эндпоинт https://jsonplaceholder.typicode.com/users/USER_ID/posts)
-6 Каждому посту додати кнопку/посилання, при кліку на яку відбувається перехід на сторінку post-details.html, котра
-має детальну інфу про поточний пост.
+/*
 user-details.html - блок з інфою про user зверху сторінки. Кнопка нижчє, на 90% ширини сторінки, по центру.
 блоки з короткою іфною про post - в ряд по 5 .
 */
+//відхопила інформацію та створила url
 let userId = new URL(location.href).searchParams.get('userId');
-console.log(userId);
 let userUrl = 'https://jsonplaceholder.typicode.com/users/' + userId;
 let postsUrl = `https://jsonplaceholder.typicode.com/users/${userId}/posts`;
 
+
+//та сама функція з колбеком що й в минулому файлі
 function fetchFn(url, callback) {
     fetch(url)
         .then(response => response.json())
         .then(elements => callback(elements));
 }
-
+/*/*На странице user-details.html:
+4 Вивести всю, без виключення, інформацію про об'єкт user на який клікнули
+5 Додати кнопку "post of current user", при кліку на яку, з'являються title всіх постів поточного юзера
+(для получения постов используйте эндпоинт https://jsonplaceholder.typicode.com/users/USER_ID/posts)*/
+//логіка відповідно до завдання:
 function getInfoAboutUser(user) {
     let userInfo = document.getElementsByClassName('userInfo')[0];
     let ul = document.createElement('ul');
@@ -41,6 +42,9 @@ function getInfoAboutUser(user) {
 
 fetchFn(userUrl, getInfoAboutUser);
 
+/*6 Каждому посту додати кнопку/посилання, при кліку на яку відбувається перехід на сторінку post-details.html, котра
+має детальну інфу про поточний пост.*/
+//логіка відповідно до завдання:
 let userPosts = document.createElement('div');
 document.getElementsByClassName('getPosts')[0].onclick = function () {
     userPosts.innerHTML = '';
