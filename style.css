@@ -1,0 +1,143 @@
+body {
+    margin:0;
+    background-color:#F8F8F8 ;
+    color: grey;
+    font-family: "Patrick Hand SC", cursive;
+    font-weight: 400;
+}
+.flexSpaceEv {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.users {
+    flex-wrap: wrap;
+    height: 100vh;
+}
+
+.user {
+    flex-direction: column;
+    background-color: white;
+    width: 45vw;
+    height: 120px;
+}
+.user>p{
+    font-size: 2.8vw;
+    margin: 0;
+}
+.button{
+    border: none;
+    background-color: #F8F8F8;
+    font-size: 20px;
+    color: grey;
+    font-family: "Patrick Hand SC", cursive;
+    font-weight: 400;
+}
+.user>button:hover {
+    border: 1px solid grey;
+    color: black;
+}
+.user:hover{
+    color: black;
+    border: 1px solid grey;
+}
+.containerUserDet{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.li{
+    color: black;
+    padding-left: 20px;
+    background-color: white;
+    font-size: 20px;
+    width: 90%;
+    margin: 10px 0;
+    border: 1px solid grey;
+    list-style-type: none;
+    border-radius: 5px;
+    padding-right: 5px;
+}
+.userInfo li{
+    font-size: 25px;
+}
+.userInfo li>ul>li{
+    background-color:#F8F8F8;
+}
+.userInfo li>ul>li>ul>li{
+    background-color:white;
+}
+.getPosts{
+    margin: 50px 0;
+    width: 90%;
+    font-size: 50px;
+    color: grey;
+    font-family: "Patrick Hand SC", cursive;
+    font-weight: 400;
+    border-radius: 15px;
+}
+.getPosts:hover{
+    color: black;
+    border: 2px solid black;
+}
+.userPosts{
+    width: 100%;
+    flex-wrap: wrap;
+    height: 50vh;
+}
+.userPosts>div{
+    width: 18%;
+    height: 40%;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px 0;
+    border: 1px solid grey;
+}
+.userPosts>div>p{
+    font-size: 1.3vw;
+    font-weight: bold;
+    max-width: 90%;
+    color: black;
+    text-align: center;
+    margin: 0;
+}
+.userPosts div:hover {
+    border: 2px solid black;
+    color: black;
+}
+.userPosts button:hover{
+    font-weight: bold;
+    color: black;
+    border: 1px solid grey;
+}
+.postDetails{
+    width: 50%;
+    margin: auto;
+    flex-direction: column;
+}
+.postDetails li{
+    font-weight: bold;
+    font-size: 30px;
+}
+.comments{
+    width: 100%;
+    flex-wrap: wrap;
+}
+.comments>div{
+    border-radius: 15px;
+    height: 500px;
+    width: 23%;
+    flex-direction: column;
+    border: 1px solid grey;
+    margin: 20px 0;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding-right: 30px;
+}
+.comments li{
+    font-size: 1.3vw;
+}
+
